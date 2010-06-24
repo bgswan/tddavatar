@@ -36,6 +36,19 @@ Updated Design Sketch
 ---------------------
 Receipt is redundant, it's just a printed invoice.
 
+First Story
+-----------
+Looking at the problem definition I split it into 3 stories
+
+1. Create appointment for walk in owner/patient
+2. Add charges
+3. Settle invoice with cash and receive invoice
+
+For the first story, looking at the UI sketch, a quick spike shows up the need to create an Appointment class with an owner and patient.
+
+The First Test
+--------------
+The first test I write is a unit test for creating an appointment.
 
 
 
