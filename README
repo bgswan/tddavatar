@@ -48,7 +48,7 @@ For the first story, looking at the UI sketch, a quick spike shows up the need t
 
 The First Test
 --------------
-The first test I write is a unit test for creating an appointment.
+The first test I write is a unit test for creating an appointment. Which I make pass by creating the class and a migration for the fields.
 
 
 
