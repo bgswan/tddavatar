@@ -1,2 +1,0 @@
-  [4;36;1mAppointment Create (0.3ms)[0m   [0;1mINSERT INTO "appointments" ("created_at", "updated_at", "patient", "owner") VALUES('2010-06-24 15:36:56', '2010-06-24 15:36:56', 'Fluffy', 'Dave Atkins')[0m
-  [4;36;1mAppointment Create (0.3ms)[0m   [0;1mINSERT INTO "appointments" ("created_at", "updated_at", "patient", "owner") VALUES('2010-06-24 15:37:18', '2010-06-24 15:37:18', 'Fluffy', 'Dave Atkins')[0m
