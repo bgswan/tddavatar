@@ -48,7 +48,10 @@ For the first story, looking at the UI sketch, a quick spike shows up the need t
 
 The First Test
 --------------
-The first test I write is a unit test for creating an appointment. Which I make pass by creating the class and a migration for the fields.
+The first test I write is a unit test for creating an appointment. Which I make pass by creating the class and a migration for the fields. I tend to think outside-in and then implement inside-out (or middle-out using Fowler's term)
 
+Controller and View
+-------------------
+With the model in place I can now add the controller index and create methods. My controller tests use real object instances not mocks, and assert things about the view.
 
 
