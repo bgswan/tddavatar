@@ -1,3 +1,11 @@
+<% form_for(Appointment.new) do |f| %>
+  <%= f.label :owner, 'Owner' %>:
+  <%= f.text_field :owner %>
+  <%= f.label :patient, 'Patient' %>:
+  <%= f.text_field :patient %>
+  <%= submit_tag 'Add' %>
+<% end %>
+
 <table>
   <tr><th>Owner</th><th>Patient</th></tr>
   <%= render :partial => "appointment", :collection => @appointments %>
