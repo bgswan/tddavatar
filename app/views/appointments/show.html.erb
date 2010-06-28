@@ -1,4 +1,14 @@
+<h1>Appointment</h1>
+
 <p>Owner: <%= @appointment.owner %></p>
 <p>Patient: <%= @appointment.patient %></p>
 
+<h2>Treatments</h2>
+
+<table>
+  <tr><th>Treatment</th><th>Cost</th></tr>
+  <%= render :partial => "charge", :collection => @appointment.charges %>
+</table>
+
+<hr/>
 <%= link_to "Appointments", appointments_path %>
