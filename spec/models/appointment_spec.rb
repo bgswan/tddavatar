@@ -11,7 +11,8 @@ describe Appointment do
   
   it "can add charges" do
     appointment = Appointment.create(:owner => 'Dave Atkins', :patient => 'Fluffy')
-    charge = Charge.new(:description => 'Rabies shot', :cost => '50.0')
+    description = ChargeDescription.create(:treatment => 'Rabies shot', :cost => 50.0 )
+    charge = Charge.new(:charge_description => description, :cost => 50.0)
     
     appointment.charges << charge
     
