@@ -54,4 +54,8 @@ Controller and View
 -------------------
 With the model in place I can now add the controller index and create methods. My controller tests use real object instances not mocks, and assert things about the view.
 
+Second Story
+------------
+Adding charges. First thing is based on the UI sketch I want to show a specific appointment. So write a test for AppointmentsController#show
+
 

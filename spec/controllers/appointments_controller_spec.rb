@@ -25,4 +25,12 @@ describe AppointmentsController do
     assert_equal "fluffy", appointment.patient
     assert_equal "dave", appointment.owner
   end
+  
+  it "should show a specific appointment" do
+    appointment = Appointment.create(:owner => 'Dave', :patient => 'fluffy')
+    
+    get :show, :id => appointment.id
+    
+    assert_match /Dave.*fluffy/, response.body
+  end
 end
