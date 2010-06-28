@@ -28,10 +28,13 @@ describe AppointmentsController do
   
   it "should show a specific appointment" do
     appointment = Appointment.create(:owner => 'Dave', :patient => 'fluffy')
+    appointment.charges << ChargeDescription.create(:treatment => "Rabies shot", :cost => 50.0).new_charge
     
     get :show, :id => appointment.id
     
     assert_match /Dave/, response.body
     assert_match /fluffy/, response.body
+    assert_match /Rabies shot.*50.00/, response.body
   end
+  
 end

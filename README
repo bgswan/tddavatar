@@ -68,3 +68,5 @@ Test wise I now have a short to-do list
 - create a charge from a charge description
 - add a charge to an appointment
 
+Back to the controller, update the appointments show test to include charge descriptions
+
