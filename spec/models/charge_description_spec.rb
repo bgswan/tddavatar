@@ -9,10 +9,10 @@ describe ChargeDescription do
     assert_equal 50.0, description.cost
   end
   
-  it "can create a charge" do
+  it "can create a new charge" do
     description = ChargeDescription.create(:treatment => 'Rabies Shot', :cost => '50.0')
 
-    charge = description.create_charge
+    charge = description.new_charge
     
     assert_equal 'Rabies Shot', charge.treatment
     assert_equal 50.0, charge.cost
