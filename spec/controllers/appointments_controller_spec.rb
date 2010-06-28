@@ -31,6 +31,7 @@ describe AppointmentsController do
     
     get :show, :id => appointment.id
     
-    assert_match /Dave.*fluffy/, response.body
+    assert_match /Dave/, response.body
+    assert_match /fluffy/, response.body
   end
 end

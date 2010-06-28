@@ -10,4 +10,8 @@ class AppointmentsController < ApplicationController
     redirect_to appointments_path
   end
   
+  def show
+    @appointment = Appointment.find(params[:id])
+  end
+  
 end
