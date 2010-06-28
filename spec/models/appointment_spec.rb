@@ -8,4 +8,15 @@ describe Appointment do
     assert_equal 'Dave Atkins', appointment.owner
     assert_equal 'Fluffy', appointment.patient
   end
+  
+  it "can add charges" do
+    appointment = Appointment.create(:owner => 'Dave Atkins', :patient => 'Fluffy')
+    charge = Charge.new(:description => 'Rabies shot', :cost => '50.0')
+    
+    appointment.charges << charge
+    
+    assert_equal 1, appointment.charges.size
+    assert_equal charge, appointment.charges.first
+    assert_equal appointment, charge.appointment
+  end
 end
