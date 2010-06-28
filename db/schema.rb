@@ -9,11 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100624153344) do
+ActiveRecord::Schema.define(:version => 20100628104805) do
 
   create_table "appointments", :force => true do |t|
     t.string   "owner"
     t.string   "patient"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "charge_descriptions", :force => true do |t|
+    t.string   "treatment"
+    t.decimal  "cost",       :precision => 6, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
