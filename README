@@ -56,6 +56,15 @@ With the model in place I can now add the controller index and create methods. M
 
 Second Story
 ------------
-Adding charges. First thing is based on the UI sketch I want to show a specific appointment. So write a test for AppointmentsController#show
+Adding charges. First thing is based on the UI sketch I want to show a specific appointment. So write a test for AppointmentsController#show. Next, again checking the UI sketch I need to show a list of procedures carried out and a drop down list of procedures to add. Showing the drop down is going to require a list of charges from somewhere, my current design sketch has a charge object but that is something associated with an appointment, so getting a list of all procedures/charges is going to result in duplicates and potentially different prices. Another class is required. Borrowing from the Domain Neutral Component pattern we can introduce the description archetype and add a ChargeDescription class. So the design sketch of what is required so far is now:
 
+Appointment     Charge          ChargeDescription     
+- owner         - description   - treatment
+- patient       - cost          - cost
+- charges                 
+
+
+Test wise I now have a short to-do list 
+- create a charge from a charge description
+- add a charge to an appointment
 
