@@ -37,4 +37,14 @@ describe AppointmentsController do
     assert_match /Rabies shot.*50.00/, response.body
   end
   
+  it "should update an appointment with a charge" do
+    # {"commit"=>"Add", "authenticity_token"=>"1wXEwn3zFxUfye2m//bd3obt3ABzzyTe4f9uAPneWjM=", "id"=>"1", "charge_description"=>{"id"=>"1"}}
+    appointment = Appointment.create(:owner => 'Dave', :patient => 'fluffy')
+    charge_description = ChargeDescription.create(:treatment => "Rabies shot", :cost => 50.0)
+    
+    put :update, :id => appointment.id, :charge_description => {:id => charge_description.id}
+    
+    assert_equal 1, appointment.charges.size
+  end
+  
 end
