@@ -15,7 +15,7 @@
 
 <h2>Payments</h2>
 <% form_tag appointment_path(@appointment), :method => :put do -%>
-  <%= text_field_tag 'payment_amount' %>
+  <%= text_field_tag 'payment[amount]' %>
   <%= submit_tag 'Add' %>
 <% end -%>
 <table>

@@ -16,9 +16,11 @@ class AppointmentsController < ApplicationController
   
   def update
     @appointment = Appointment.find(params[:id])
-    charge_description = ChargeDescription.find(params[:charge_description][:id])
+    charge_description = ChargeDescription.find(params[:charge_description][:id]) if params[:charge_description]
+    payment = Payment.new(params[:payment]) if params[:payment]
     
-    @appointment.charges << charge_description.new_charge
+    @appointment.charges << charge_description.new_charge unless charge_description.nil?
+    @appointment.payments << payment unless payment.nil?
     
     redirect_to appointment_path(@appointment)
   end

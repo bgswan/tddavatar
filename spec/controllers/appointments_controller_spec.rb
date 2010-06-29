@@ -48,15 +48,16 @@ describe AppointmentsController do
     
     assert_redirected_to appointment_path(appointment)
     assert_equal 1, appointment.charges.size
+    assert_equal 0, appointment.payments.size
   end
   
   it "should update an appointment with a payment" do
     appointment = Appointment.create(:owner => 'Dave', :patient => 'fluffy')
-    
-    put :update, :id => appointment.id, :payment_amount => "200"
+
+    put :update, :id => appointment.id, :payment => {:amount => "100"}
     
     assert_redirected_to appointment_path(appointment)
     assert_equal 1, appointment.payments.size
-    assert_equal 200.0, appointment.payments.first.amount
+    assert_equal 100.0, appointment.payments.first.amount
   end
 end
