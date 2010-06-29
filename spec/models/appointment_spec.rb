@@ -24,7 +24,7 @@ describe Appointment do
     appointment.payments << Payment.new(:amount => 10.0)
     
     assert_equal 1, appointment.payments.count
-    assert_equal 10.0, appointment.payments.first
+    assert_equal 10.0, appointment.payments.first.amount
   end
   
   it "can calculate total due"
