@@ -42,7 +42,7 @@ Looking at the problem definition I split it into 3 stories
 
 1. Create appointment for walk in owner/patient
 2. Add charges
-3. Settle invoice with cash and receive invoice
+3. Settle invoice with cash and receive receipt
 
 For the first story, looking at the UI sketch, a quick spike shows up the need to create an Appointment class with an owner and patient.
 
@@ -69,4 +69,22 @@ Test wise I now have a short to-do list
 - add a charge to an appointment
 
 Back to the controller, update the appointments show test to include charge descriptions. 
+
+Final Story
+-----------
+Adding payments. Taking a step back it seems that there is no real value in having an invoice class as the majority of its behaviour would be delegated to the appointment, e.g. list of charges, name of patient, etc. Seems like things can be simplified by just adding payments to an appointment. The updated design sketch is now.
+
+Appointment     Charge          ChargeDescription     Payment
+- owner         - description   - treatment           - amount
+- patient       - cost          - cost
+- charges                 
+- payments
+- total_due
+
+Test list
+- Add a payment to an appointment
+- Calculate total due on appointment
+- appointments_controller#update can add payments 
+
+
 
