@@ -4,7 +4,10 @@
 <p>Patient: <%= @appointment.patient %></p>
 
 <h2>Treatments</h2>
-
+<% form_tag appointment_path(@appointment), :method => :put do -%>
+  <%= collection_select(:charge_description, :id, ChargeDescription.all, :id, :treatment )%>
+  <%= submit_tag 'Add' %>
+<% end -%>
 <table>
   <tr><th>Treatment</th><th>Cost</th></tr>
   <%= render :partial => "charge", :collection => @appointment.charges %>
