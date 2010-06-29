@@ -13,5 +13,12 @@
   <%= render :partial => "charge", :collection => @appointment.charges %>
 </table>
 
+<h2>Payments</h2>
+<table>
+  <tr><th>Amount</th></tr>
+  <%= render :partial => "payment", :collection => @appointment.payments %>
+</table>
+
+<h2>Total Due: <%= number_to_currency(@appointment.total_due) %></h2>
 <hr/>
 <%= link_to "Appointments", appointments_path %>
