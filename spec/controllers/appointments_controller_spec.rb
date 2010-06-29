@@ -29,12 +29,15 @@ describe AppointmentsController do
   it "should show a specific appointment" do
     appointment = Appointment.create(:owner => 'Dave', :patient => 'fluffy')
     appointment.charges << ChargeDescription.create(:treatment => "Rabies shot", :cost => 50.0).new_charge
+    appointment.payments << Payment.new(:amount => 20.0)
     
     get :show, :id => appointment.id
     
     assert_match /Dave/, response.body
     assert_match /fluffy/, response.body
     assert_match /Rabies shot.*50.00/, response.body
+    assert_match /Payment.*20.00/, response.body
+    assert_match /Total Due.*30.00/, response.body
   end
   
   it "should update an appointment with a charge" do
