@@ -14,4 +14,12 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
   
+  def update
+    @appointment = Appointment.find(params[:id])
+    charge_description = ChargeDescription.find(params[:charge_description][:id])
+    
+    @appointment.charges << charge_description.new_charge
+    
+    redirect_to appointment_path(@appointment)
+  end
 end

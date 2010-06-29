@@ -44,6 +44,7 @@ describe AppointmentsController do
     
     put :update, :id => appointment.id, :charge_description => {:id => charge_description.id}
     
+    assert_redirected_to appointment_path(appointment)
     assert_equal 1, appointment.charges.size
   end
   
