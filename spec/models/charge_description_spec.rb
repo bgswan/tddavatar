@@ -17,4 +17,8 @@ describe ChargeDescription do
     assert_equal 'Rabies Shot', charge.treatment
     assert_equal 50.0, charge.cost
   end
+  
+  it "has failing test to check CI" do
+    fail 'oh no!!!'
+  end
 end
