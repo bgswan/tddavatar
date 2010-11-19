@@ -19,6 +19,6 @@ describe ChargeDescription do
   end
   
   it "has failing test to check CI" do
-    fail 'oh no!!!'
+    fail 'oh no, this time!!!'
   end
 end
